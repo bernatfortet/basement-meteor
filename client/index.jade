@@ -25,23 +25,82 @@ head
 	link( rel="apple-touch-icon", href="/apple-touch-icon.png")
 
 	//Css
-	link( rel="stylesheet", media="screen", href="styles/main.css")
+	link( rel="stylesheet", media="screen", href="styles/main.css", type="text/css")
 
 body
+
+
+
 	.content
 		{{> hello}}
 
 
-		footer
-			p copyright here\
-
 	#Scripts
-		script( src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" )
-		script( src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js" )
+		script( src="scripts/lib/jquery-1.10.1.min.js" )
 
-		script( src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js" )
+		script( src="scripts/lib/bootstrap.min.js" )
 
+		script( src="scripts/lib/spine/spine.js", type"text/javascript")
+		script( src="scripts/lib/moment.min.js", type"text/javascript")
+		script( src="scripts/lib/jwerty.js", type"text/javascript")
+		script( src="scripts/lib/typeahead.min.js", type"text/javascript")
+
+
+		script( src="libs/handlebars.runtime.js", type"text/javascript")
+
+
+		script( src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2a8KdO9x1fmW942MBZmu79CewTwKC0T0&sensor=false", type"text/javascript")
+
+
+		script( src="scripts/lib/color-thief.js", type"text/javascript")
+		script( src="scripts/lib/quantize.js", type"text/javascript")
+
+		script( src="scripts/device.js", type"text/javascript")
+		script( src="scripts/context_event.js", type"text/javascript")
+		script( src="scripts/event.js", type"text/javascript")
+		script( src="scripts/day.js", type"text/javascript")
 		script( src="scripts/app.js", type"text/javascript")
+
+/*
+//template(name="days")
+	#Tools.tools
+		input#AppCategoryInput(placeholder="App Category")
+		input#OpenedFromInput(placeholder="Opened From")
+
+	#Events.events
+
+	.axis
+		- for (var x = 0; x < 24; x++)
+			.hour= x
+
+	#Templates
+
+		template( id="EventTemplate", type="text/x-handlebars-template" )
+			.event.Event( package_name="{{package_name}}", opened_from="{{opened_from}}" ,title="{{package_name}} - {{timeHour}} - {{opened_from}}" )
+				.icon
+					{{#if icon_url}}
+					img( src="{{icon_url}}")
+					{{else}}
+					.package-name {{clean_package_name}}
+					{{/if}}
+				//.meta
+					.app-name {{package_name}}
+					.time {{timeHour}}
+
+
+		template( id="ContextEventTemplate", type="text/x-handlebars-template" )
+			.context-event.ContextEvent( space_name="{{space_name}}" )
+
+
+		template( id="DayTemplate", type="text/x-handlebars-template" )
+			.day.Day( oppened_apps="0" )
+				.date {{date}}
+				//.axis
+					- for (var x = 0; x < 24; x++)
+						.hour= x
+*/
+
+
 
 template(name="hello")
 	h1 Hello

@@ -1,4 +1,6 @@
 if Meteor.isClient
+
+
   Template.hello.greeting = ->
     "Welcome to test_app."
 
@@ -10,5 +12,10 @@ if Meteor.isClient
 if Meteor.isServer
   Meteor.startup ->
 
+
+$(document).ready( ->
+	#history = new History()
+	map = new Map()
+)
 
 # code to run on server at startup
